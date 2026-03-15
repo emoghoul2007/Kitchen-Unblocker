@@ -279,7 +279,20 @@
         function sendToTelegram(event) {
             // Ця команда жорстко блокує перезавантаження сторінки
             event.preventDefault(); 
-
+            // --- ОТПРАВКА В TIKTOK ---
+ttq.track('PlaceAnOrder', {
+    contents: [
+        {
+            content_id: 'kitchen_cleaner_01',
+            content_name: 'Kitchen Cleaner',
+            quantity: 1,
+            price: 299
+        }
+    ],
+    value: 299,
+    currency: 'UAH'
+});
+            
             const form = document.getElementById('tgForm');
             const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
